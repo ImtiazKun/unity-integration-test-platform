@@ -32,12 +32,18 @@ function App() {
     setScore(score);
   }, []);
 
+  const handleQuitGame = useCallback(async (score) => {
+    console.log("Score 2", score);
+    setScore(score);
+  });
+
   useEffect(() => {
     loadScene();
   }, [isLoaded]);
 
   useEffect(() => {
     addEventListener("GameOver", handleGameOver);
+    addEventListener("QuitGame", handleQuitGame);
     return () => {
       removeEventListener("GameOver", handleGameOver);
     };
