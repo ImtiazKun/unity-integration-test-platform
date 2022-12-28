@@ -15,10 +15,10 @@ function App() {
     addEventListener,
     removeEventListener,
   } = useUnityContext({
-    loaderUrl: "games/eleven-eleven/eleveneleven.loader.js",
-    dataUrl: "games/eleven-eleven/eleveneleven.data",
-    frameworkUrl: "games/eleven-eleven/eleveneleven.framework.js",
-    codeUrl: "games/eleven-eleven/eleveneleven.wasm",
+    loaderUrl: "games/Hillclimbracing/Hillclimbracing.loader.js",
+    dataUrl: "games/Hillclimbracing/Hillclimbracing.data",
+    frameworkUrl: "games/Hillclimbracing/Hillclimbracing.framework.js",
+    codeUrl: "games/Hillclimbracing/Hillclimbracing.wasm",
   });
 
   // Changes Scene
@@ -34,6 +34,7 @@ function App() {
 
   const handleQuitGame = useCallback(async (score) => {
     console.log("Score 2", score);
+    sendMessage("LoadLevelManager", "LoadLevel", 0);
     setScore(score);
   });
 
